@@ -11,9 +11,9 @@ html {
 .header {
    display:flex;
    background-color: white;
-   width:100vw;
+   width:100%;
    justify-content: space-between;
-   align-items: center;
+   align-items:center;
    height: 45px;
    position:fixed;
    z-index:100;
@@ -21,13 +21,15 @@ html {
 
 #check
 {
-    display:inline;
+    display:none;
+    float:right;
 }
     
 
 label {
-    padding:2px;
     display:block;
+    float:right;
+    
 }
 
 .hamburguesa {
@@ -55,6 +57,8 @@ h1 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 2.2rem;
     font-weight: 500;
+    width: 90%;
+    margin:0px auto;
 }
 
 h1 .world {
@@ -62,8 +66,7 @@ h1 .world {
 }
 .titulo {
 padding:55px 0 15px 0;
-width: 90vw;
-margin:auto;
+
 
 }
 
@@ -75,9 +78,10 @@ ul {
     display:flex;
     flex-direction:column;
     position: fixed;
-    top:40px;
-    transform:translateX(100vw);
+    top:-280px;
     width:100%;
+    transition:all 0.3s;
+    z-index:-1;
 } 
 
 ul li {
@@ -92,14 +96,14 @@ ul li a {
     color: #fff;
     font-weight:570;
     font-size: 0.85rem;
-    padding-left:15px;
-   
-   
+    padding-left:15px;  
+    display:block;
 }
 
-.boton input[type="checkbox"]:checked ~ ul{
+
+#check:checked + .menu{
    
-    transform:translateX(0vw) 
+   top:40px; 
 }
 
 .descripcion-parrafo p {
@@ -131,32 +135,35 @@ input {
     color: rgb(0,0,35);
     margin:35px 0 45px 0;
     transition-property: background-color color;
-    transition-duration: .06s ;
-
+    transition-duration: .06s;
 }
 
-input:hover{
+input:hover 
+{
 background-image:linear-gradient(to right, #01F3BB, blue);
 color:#fff;
 cursor: pointer;
-
 }
 
-.contenedor-episodios {
-
+.contenedor-episodios 
+{
     background-image: linear-gradient(to bottom, blue, darkblue);
     display:flex;
     flex-direction: column;
     position: relative;
     transform: skew(0,-6deg);
-    padding-bottom:140px;
-    
-
+    padding-bottom:140px; 
+    flex-wrap:wrap; 
+    padding-top:15pz;  
 }
 
-.contenedor-episodiosL {
-    display:none;
-}
+.contenedorRecto { 
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    width:100%;
+  }
+
 
 .contenedor-episodios h1 {
     font-family: 'Open Sans', sans-serif;
@@ -170,9 +177,15 @@ cursor: pointer;
 }
 
 
-.imagen {
+.episodio {
     margin: 5px auto;
-    transform: skew(0,6deg);    
+    transform: skew(0,6deg); 
+}
+
+iframe {
+    width:100%;
+    height:100;
+    border:none;
 }
 
 
@@ -181,7 +194,8 @@ cursor: pointer;
     flex-direction: column;
     align-items: center;
     position:relative;
-    height:110vh;
+    height:750px;
+    padding:30px;
 }
 
 
@@ -189,7 +203,7 @@ cursor: pointer;
     transform: scale(0.5);
     align-items:center;
     position:relative;
-    bottom:346px;
+    bottom:400px;
     display:flex;
     flex-direction: column;
     width:100%;
@@ -199,21 +213,23 @@ cursor: pointer;
 .detalles {
     position:absolute;
     top:450px;
-    width:90vw;
+    width:90%;
     font-family: 'Roboto Mono', monospace;
     font-size: 0.82rem;
     display:flex;
     flex-direction: column;
+    margin-top:20px;
 }
 
 
 .detalles h1 {
     margin-bottom:7px;
+    width:100%;
 }
 
 
 #invitades h1 {
-    width:90vw;
+    width:90%;
     margin:0px auto 20px;
 }
 
@@ -223,11 +239,14 @@ cursor: pointer;
     grid-template-columns:repeat(1, 1fr);
     grid-template-rows: repeat(6, 1fr);
     gap:0;
+    
+    
 }
 
 
 .image {
     margin:auto;
+    margin-top:-6px;
 }
 
 
@@ -249,14 +268,15 @@ cursor: pointer;
 .contenedor-temas h1 
 {
     width:90vw;
-    margin-top: 30px;
+    margin-top: 40px;
+    align-self:flex-start;
 }
 
 
-.tema {
-    margin:20px 0px 0px 0px;
+.contenedor-temas .tema {
     display:flex;
     flex-direction: column;
+    margin-top: 55px;
     align-items: center;    
 }
 
@@ -268,13 +288,16 @@ cursor: pointer;
 }
   
 
-.contenedor-novedades{
+.contenedor-novedades
+{
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content:center;
     background-image: linear-gradient(to left, blue, darkblue);
-    transform:skewY(-5deg);
+    clip-path: polygon(0 13%, 100% 0%, 100% 100%, 0% 100%);
     position:relative;
+    height:65vh;
     top:20px;
     width:100%;
 }
@@ -291,15 +314,10 @@ cursor: pointer;
 .contenedor-novedades .pregunta h1 {
     color:#fff;
     margin:70px 0px 0px;
-    transform:skewY(5deg);
     width:90%;
    
 }
 
-
-.contenedor-novedades input {
-    transform:skewY(5deg)
-}
 
 
 .footer {
@@ -308,7 +326,7 @@ cursor: pointer;
     position:absolute;
     z-index:10;
     background-color:#fff;
-    width:100vw;
+    width: 100%;
 }
 
 
@@ -326,16 +344,29 @@ h4 {
     justify-content: space-evenly;
 }
 
+.empresas div a:link {
+    color:#000;
+}
+
+.empresas .empresa a:visited {
+    color:#000;
+}
 
 @media only screen and (min-width:700px) {
-    .menu {
+
+
+    .menu 
+    {
         display:flex;
         flex-direction:row;
         flex-grow:1;
         transform:translate(0,-50px);
         justify-content: flex-end;
         align-items: center;  
-        width:100%;  
+        top:40px;
+        position:relative;
+        z-index:10;  
+        width:100%;
     }
 
 
@@ -357,11 +388,16 @@ h4 {
         font-size:0.8rem;
     }
 
+
     
 .titulo {
+  padding-top:130px;
   width:80%;
   margin:auto;
+
 }
+
+
 
 .link:hover {
     color:#01F3BB;
@@ -377,10 +413,10 @@ h4 {
 
 
 .titulo h1{
-  display:inline-block;
+  display:inline;
   padding-left:6px;
-  margin-top:60px;
   font-size:2.6rem;
+  width:20vw;
 }
 
 
@@ -412,49 +448,57 @@ input {
 
 }
 .contenedor-episodios {
-    display:none;
+    display:flex;
 }
 
-.contenedor-episodiosL h1 {
-    width:70%;
-    margin:auto;
-    padding: 50px 20px 0px 30px;
-    transform:skewY(4.5deg);
-    color:#fff;
-}
 
-.contenedor-episodiosL {
+
+.contenedor-episodios {
    display:flex;
-   flex-direction: column;
+   flex-direction: row;
    flex-wrap:wrap;
    background-image: linear-gradient(to left, blue, darkblue);
    transform:skewY(-4.5deg);
    align-items: center;
    padding-bottom:90px;
+   padding-top:40px;
    
 }
 
-.imagenL {
+.contenedor-episodios h1 {
     transform:skewY(4.5deg);
+    font-size:2.3rem;
+    padding-bottom:0;
+    width:65%;
+    margin:auto;
+    
+}
+
+.contenedorRecto { 
+    flex-direction: row;
+    flex-wrap:wrap;
+    transform:skewY(4.5deg);
+    justify-content:center;
+    padding: 0 30px 30px 0;
+  }
+
+
+.episodio {
     padding-top:20px;
+    transform:skewY(0deg);
 }
 
 
-}
-
-.contenedor-episodios:nth-child(4){
-    position:relative;
-    top:75px;
-}
 
 .origen-explicacion {
     display:flex;
     flex-direction: row;
     justify-content:space-between;
 }
+
 .iphone-imagen {
     width:50%;
-    bottom:135px;
+    bottom:170px;
 }
 
 .detalles {
@@ -480,12 +524,11 @@ input {
     grid-template-columns:repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap:0;
-
 }
 
 
 .contenedor-temas{
-    transform:translate(0,-150px);
+    transform:translate(0,-160px);
     display:flex;
     flex-direction:row;   
     flex-wrap:wrap;
@@ -496,11 +539,13 @@ input {
 .contenedor-temas h1 {
     flex-basis:80%;
     margin:auto;
+    margin-top:20px;
 }
 
 .contenedor-temas .tema {
     flex-basis:50%;
     padding:20px 0;
+    margin-top:20px;
     
 }
 .tema h2 {
@@ -545,10 +590,10 @@ h4 {
  }
 
 
+}
 
 
-
-@media only screen and (min-width:892px) {
+@media only screen and (min-width:899px) {
 
 .menu{
     padding-right:40px;
@@ -577,57 +622,36 @@ h4 {
       margin:auto;
   }
 
-  .contenedor-episodios {
-      display:none;
+  .contenedor-episodios{
+      padding-top:60px;
   }
 
-  .contenedor-episodiosL {
-        display:flex;
-        flex-direction: row;
-        background-image: linear-gradient(to left, blue, darkblue);
-        position: relative;
-        flex-wrap: wrap;
-        transform: skew(0,-4.5deg);
-        justify-content:space-around;
-        
-        
+  .contenedor-episodios h1 {
+      font-size:2.6rem;
   }
 
-  .contenedor-recto {
+  .contenedorRecto {
       display:flex;
       flex-direction: row;
       flex-wrap:wrap;
       transform:skewY(4.5deg);
-      justify-content:center;
+      justify-content:space-around;
+      padding: 0 60px;  
+  }
+
+  .contenedorRecto div {
       margin:auto;
-      
   }
 
-  .contenedor-episodiosL h1 {
-    display:block;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    font-weight:400;
-    color:#fff;
-    transform: skewY(4.5deg); 
-    position:relative;
-    top:25px;
-
+  .episodio 
+  {
+    width:40%;   
   }
 
-  .imagenL {
-    display: flex;
-    flex-direction: row;    
-    transform:skewY(0deg);
-    margin:20px 35px;
-}      
+ 
 
 .logo {
     padding-left:30px;
-}
-
-.contenedor-episodiosL h1 {
-    font-size: 2.5rem;
 }
 
 .iphone-imagen {
@@ -636,7 +660,7 @@ h4 {
 }
 
 .detalles {
-    transform: translate(590px,90px);
+    transform: translate(570px,90px);
     width:34%;
 
 }
@@ -657,15 +681,15 @@ h4 {
     display:flex;
     flex-direction: row;
     justify-content: center;
-    width:80%;
+    width:90%;
     margin:auto;
-    height:30vh;
+    height:25vh;
 }
 
 .contenedor-temas .tema {
     flex-basis:25%;
     transform: scale(0.85);
-    
+    margin-top:15px;
 }
 
 .tema h2 {
@@ -674,21 +698,41 @@ h4 {
 
 
 .contenedor-novedades {
-    height:62vh;
+    height:75vh;
     position:relative;
     bottom:150px;
+    justify-content: flex-start;
+    align-items:center;
 
+
+}
+
+.contenedor-novedades h1 {
+    margin-top:60px;
+    transform:translateY(60px);
+}
+
+.contenedor-novedades input {
+    margin-bottom:40px;
+    transform:translateY(60px);
 }
 
 .footer {
     transform:translateY(-50px);
-    height:25vh;
+    height:12vh;
     align-items:flex-start;
 }
 
 
 .empresa {
-    transform:translateY(-35px);
-    
+align-items:center;    
 }
+
+}
+
+@media only screen and (max-width:360px) {
+
+    .origen-explicacion{
+        height:820px;
+    }
 }

@@ -21,19 +21,22 @@
 <body>
     <header>
         <nav class="header">
-           <div class="hamburguesa">
-                <label for="check" class="fas fa-bars"></label>
-                <input type="checkbox" id="check"/>
+            
+            <div class="logo">
+                <img src="logo.svg" alt="logo">
             </div>
-        
-        <div class="logo" alt="logo">
-            <img src="logo.svg">
+           <div class="hamburguesa">
+            <label for="check" class="fas fa-bars">
+
+            </label>
         </div>
+            <input type="checkbox" name="check" id="check"/>
+        
         <ul class="menu">
-            <li class="fila 1"><a class="link 1" href="#">Episodios</a></li>
-            <li class="fila 2"><a class="link 2" href="#">Nosotros</a></li>
-            <li class="fila 3"><a class="link 3" href="#">Entrevistas</a></li>
-            <li class="fila 4"><a class="link 4" href="#">Tópicos</a></li>
+            <li class="fila 1"><a class="link 1" href="#episodios">Episodios</a></li>
+            <li class="fila 2"><a class="link 2" href="#origen">Nosotros</a></li>
+            <li class="fila 3"><a class="link 3" href="#invitades">Entrevistas</a></li>
+            <li class="fila 4"><a class="link 4" href="#temas">Tópicos</a></li>
         </ul>
         </nav>
     </header>
@@ -41,53 +44,36 @@
     <main>
         <section class="introduccion">
             <div class="titulo">
-                <h1> Hello <span class="world">world</span></h1>
-                <h1>pale blue dot<span class="dot">.</span></h1>
+                <h1 class="hello"> Hello <span class="world">world </span></h1>
+                <h1>pale blue dot <span class="dot">.</span></h1>
             </div>
-            <article id="descripcion">
                 <div class="descripcion-parrafo">
                     <p>El portal de podcasts que explora el mundo de la programación y la tecnología. Nuevos episodios, todos los jueves cada 15 días.</p>
                 </div>
-            </article>
             <div class="boton">
             <input type="button" value="CONOCÉ MÁS"> 
             </div>
         </section>
-        <section class="episodios">
+        <section id="episodios">
             <div class="contenedor-episodios">
                 <h1>Episodios</h1>
-                <div class="imagen 1">
-                    <img src="embed1_.png" alt="It`s just Javascript">
+                <div class="contenedorRecto">
+                <div class="episodio 1">
+                    <iframe src="https://open.spotify.com/embed-podcast/show/2ySVrxGkN6n6frMTo9Nsrt" width="100" height="232" allow="encrypted-media"></iframe>
                 </div>
-                <div class="imagen 2">
-                    <img src="embed2_.png" alt="The Fundamentals: HTML + CSS">
+                <div class="episodio 2">
+                    <iframe src="https://open.spotify.com/embed-podcast/show/4kYCRYJ3yK5DQbP5tbfZby" width="100" height="232" allow="encrypted-media"></iframe>
                 </div>
-                <div class="imagen 3">
-                    <img src="embed3_.png" alt="The Open Office">
+                <div class="episodio 3">
+                    <iframe src="https://open.spotify.com/embed-podcast/show/5JxcIaIkN8zx3Zy7yD9snv" width="100" height="232"  allow="encrypted-media"></iframe>
                 </div>
-                <div class="imagen 4">
-                    <img src="embed3_.png" alt="277: Caching GraphQL with Michael Kelly">
+                <div class="episodio 4">
+                    <iframe src="https://open.spotify.com/embed-podcast/show/2Iibd5A6R7mxkCm4NwNmUn" width="100" height="232" allow="encrypted-media"></iframe>
                 </div>
+            </div>
                 
             </div>    
             
-            <div class="contenedor-episodiosL">
-                <h1>Episodios</h1>
-                <div class="contenedor-recto">
-                <div class="imagenL 1">
-                <img src="embed1.png"  alt="It`s just Javascript">
-                </div>
-                <div class="imagenL 2">
-                    <img src="embed2.png" alt="The Fundamentals: HTML + CSS">
-                </div>
-                <div class="imagenL 3">
-                    <img src="embed3.png" alt="The Open Office">
-                </div>
-                <div class="imagenL 4">
-                    <img src="embed4.png" alt="277: Caching GraphQL with Michael Kelly">
-                </div>
-            </div>
-            </div>
         </section>
         <section id="origen">
 
@@ -116,13 +102,13 @@
                 <img src="Margaret_Hamilton.png" alt="Margaret Hamilton">
             </div>
             <div class="image 4">
-                <img src="An E.R.A.Univac 1103 computer in the 1950s.png" alt="Computadora 1950">
+                <img src="1950s.png" alt="Computadora 1950">
             </div>
             <div class="image 5">
-                <img src="Computer operators with an Eniac — the world’s first programmable general-purpose computer.png" alt="Primera compiutadora programable">
+                <img src="ENIAC.png" alt="Primera compiutadora programable">
             </div>
-            <div class="image 6" alt="Susan Kare">
-                <img src="susan-kare.png">
+            <div class="image 6">
+                <img src="susan-kare.png"  alt="Susan Kare">
             </div>
             </div>
 
@@ -167,19 +153,19 @@
                 <h4>© 2019- Hello blue pale dot</h4>
                 <div class="empresas">
                     <div class="empresa 1">
-                    <i class="fab fa-spotify"></i>
+                        <a  href="https://www.spotify.com/ar/" target="_blank"><i class="fab fa-spotify"></i></a>
                     </div>
-                    <div class="empresa 2">
-                     <i class="fab fa-instagram"></i>  
+                    <div class="empresa 2">  
+                        <a  href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>       
                     </div>
                     <div class="empresa 3">
-                    <i class="fab fa-twitter"></i>
+                       <a href="https://twitter.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                     <div class="empresa 4">
-                    <i class="fab fa-facebook"></i>   
+                        <a  href="https://es-la.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
                     </div>
-                    <div class="empresa 5">
-                    <i class="fab fa-telegram"></i>   
+                    <div class="empresa 5"> 
+                        <a  href="https://web.telegram.org/" target="_blank"><i class="fab fa-telegram" ></i></a> 
                     </div>
                 </div>
             </div>
